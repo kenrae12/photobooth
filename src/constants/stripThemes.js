@@ -1,4 +1,8 @@
-
+/**
+ * Visual themes for the downloadable photo strip. Each theme controls the
+ * background, border/text colors, caption font, and an optional decorative
+ * motif drawn by utils/downloadStrip.js.
+ */
 export const STRIP_THEMES = [
   {
     id: 'classic',
@@ -49,6 +53,68 @@ export const STRIP_THEMES = [
     font: 'italic 22px Georgia, serif',
     decoration: 'stars',
     swatch: ['#1c1a3a', '#e8c468'],
+  },
+  {
+    id: 'doodle',
+    label: 'Doodle Diary',
+    background: '#fdfcf7',
+    border: '#1a1a1a',
+    text: '#1a1a1a',
+    font: '20px "Comic Sans MS", cursive',
+    decoration: 'doodle',
+    footerHeight: 84,
+    swatch: ['#fdfcf7', '#e0507a'],
+  },
+  {
+    id: 'social',
+    label: 'Insta Memories',
+    background: '#ffffff',
+    border: '#dbdbdb',
+    text: '#262626',
+    mutedText: '#8e8e8e',
+    font: 'bold 17px -apple-system, Helvetica, Arial, sans-serif',
+    decoration: 'social',
+    footerHeight: 140,
+    swatch: ['#ffffff', '#262626'],
+  },
+  {
+    id: 'player',
+    label: 'Mixtape Player',
+    background: '#121212',
+    border: '#2a2a2a',
+    text: '#f5f5f5',
+    mutedText: '#a7a7a7',
+    accent: '#e8594c',
+    font: 'bold 18px -apple-system, Helvetica, Arial, sans-serif',
+    decoration: 'player',
+    footerHeight: 120,
+    swatch: ['#121212', '#e8594c'],
+  },
+  {
+    id: 'redbold',
+    label: 'Portrait of Us',
+    background: '#0d0d0d',
+    border: '#c62828',
+    text: '#ffffff',
+    font: '24px Georgia, serif',
+    decoration: 'redbold',
+    headerHeight: 54,
+    footerHeight: 50,
+    swatch: ['#0d0d0d', '#c62828'],
+  },
+  {
+    id: 'blossom',
+    label: 'Pink Blossom',
+    background: '#f7dadd',
+    border: '#ffffff',
+    text: '#3a2f2a',
+    font: '26px "Segoe Script", "Brush Script MT", cursive',
+    decoration: 'floral',
+    headerHeight: 66,
+    footerHeight: 66,
+    roundedCorners: true,
+    captions: ['Enjoy Life', 'You are loved', '', 'be happy'],
+    swatch: ['#f7dadd', '#ffffff'],
   },
 ];
 

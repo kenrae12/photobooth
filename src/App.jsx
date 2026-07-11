@@ -67,8 +67,8 @@ export default function App() {
   return (
     <div className="app">
       <Marquee />
-      <h1>Gawa kong photobooth</h1>
-      <p className="sub">To make memories</p>
+      <h1>Two of Us</h1>
+      <p className="sub">an online photobooth for two</p>
 
       <div className="panel">
         <ConnectPanel

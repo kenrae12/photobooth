@@ -1,6 +1,6 @@
 import { STRIP_THEMES } from '../constants/stripThemes';
 
-
+/** Lets the user pick a visual theme for the downloadable photo strip. */
 export function StripThemePicker({ selectedThemeId, onSelect }) {
   return (
     <div className="theme-picker">
