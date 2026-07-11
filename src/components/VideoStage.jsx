@@ -1,4 +1,4 @@
-/** Side-by-side local/remote video feeds with a shared countdown overlay. */
+
 export function VideoStage({ localVideoRef, remoteVideoRef, filter, countdown }) {
   return (
     <div className="stage">

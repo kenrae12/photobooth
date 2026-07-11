@@ -1,0 +1,55 @@
+
+export const STRIP_THEMES = [
+  {
+    id: 'classic',
+    label: 'Classic Cream',
+    background: '#f3e9da',
+    border: '#1a1410',
+    text: '#1a1410',
+    font: 'italic 22px Georgia, serif',
+    decoration: 'none',
+    swatch: ['#f3e9da', '#1a1410'],
+  },
+  {
+    id: 'love',
+    label: 'Love Pink',
+    background: '#ffe4ec',
+    border: '#d9536c',
+    text: '#7a1f36',
+    font: 'italic 22px Georgia, serif',
+    decoration: 'hearts',
+    swatch: ['#ffe4ec', '#d9536c'],
+  },
+  {
+    id: 'noir',
+    label: 'Noir Film',
+    background: '#141414',
+    border: '#e8a34c',
+    text: '#e8a34c',
+    font: 'italic 22px Georgia, serif',
+    decoration: 'sprockets',
+    swatch: ['#141414', '#e8a34c'],
+  },
+  {
+    id: 'polaroid',
+    label: 'Retro Polaroid',
+    background: '#fffdf5',
+    border: '#dcd6c4',
+    text: '#3a362c',
+    font: '20px "Comic Sans MS", cursive',
+    decoration: 'polaroid',
+    swatch: ['#fffdf5', '#dcd6c4'],
+  },
+  {
+    id: 'datenight',
+    label: 'Date Night',
+    background: '#1c1a3a',
+    border: '#e8c468',
+    text: '#e8c468',
+    font: 'italic 22px Georgia, serif',
+    decoration: 'stars',
+    swatch: ['#1c1a3a', '#e8c468'],
+  },
+];
+
+export const DEFAULT_STRIP_THEME = STRIP_THEMES[0];

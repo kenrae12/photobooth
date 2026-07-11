@@ -6,6 +6,7 @@ import { ConnectPanel } from './components/ConnectPanel';
 import { VideoStage } from './components/VideoStage';
 import { Controls } from './components/Controls';
 import { StripPreview } from './components/StripPreview';
+import { StripThemePicker } from './components/StripThemePicker';
 
 import { usePeerCall } from './hooks/usePeerCall';
 import { useCountdown } from './hooks/useCountdown';
@@ -13,6 +14,7 @@ import { useCountdown } from './hooks/useCountdown';
 import { capturePairedFrame } from './utils/photoCapture';
 import { downloadPhotoStrip } from './utils/downloadStrip';
 import { DEFAULT_FILTER, MAX_SHOTS } from './constants/filters';
+import { STRIP_THEMES, DEFAULT_STRIP_THEME } from './constants/stripThemes';
 
 export default function App() {
   const {
@@ -33,8 +35,12 @@ export default function App() {
   const [started, setStarted] = useState(false);
   const [filter, setFilter] = useState(DEFAULT_FILTER);
   const [shots, setShots] = useState([]);
+  const [stripThemeId, setStripThemeId] = useState(DEFAULT_STRIP_THEME.id);
 
+  const selectedTheme =
+    STRIP_THEMES.find((t) => t.id === stripThemeId) ?? DEFAULT_STRIP_THEME;
 
+  // Auto-fill the join code when opened via a `?room=` share link.
   useEffect(() => {
     const room = new URLSearchParams(window.location.search).get('room');
     if (room) setJoinCode(room);
@@ -61,7 +67,7 @@ export default function App() {
   return (
     <div className="app">
       <Marquee />
-      <h1>Gawa kong photobooth para satin</h1>
+      <h1>Gawa kong photobooth</h1>
       <p className="sub">To make memories</p>
 
       <div className="panel">
@@ -90,9 +96,11 @@ export default function App() {
           onTakePhoto={handleTakePhoto}
           canTakePhoto={remoteConnected}
           onResetStrip={() => setShots([])}
-          onDownloadStrip={() => downloadPhotoStrip(shots)}
+          onDownloadStrip={() => downloadPhotoStrip(shots, selectedTheme)}
           hasShots={shots.length > 0}
         />
+
+        <StripThemePicker selectedThemeId={stripThemeId} onSelect={setStripThemeId} />
       </div>
 
       <StripPreview shots={shots} />
